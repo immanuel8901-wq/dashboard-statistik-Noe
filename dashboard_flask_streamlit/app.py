@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 
 app = Flask(__name__)
-   import os
-   FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.xlsx")
+import os
+FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.xlsx")
 
 
 def load_data():
