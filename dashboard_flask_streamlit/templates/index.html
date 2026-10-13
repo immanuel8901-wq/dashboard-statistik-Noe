@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard Statistik Deskriptif</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Dashboard Statistik Deskriptif</h1>
+    <p>Data nilai 10 kelompok × 10 orang</p>
+  </header>
+
+  <main>
+    <section class="kpis" id="kpis"></section>
+
+    <section class="grid">
+      <div class="card"><h2>Rata-rata per Kelompok</h2><canvas id="chartMean"></canvas></div>
+      <div class="card"><h2>Standar Deviasi per Kelompok</h2><canvas id="chartSd"></canvas></div>
+    </section>
+
+    <section class="card">
+      <h2>Distribusi Nilai per Kelompok</h2>
+      <label>Pilih kelompok:
+        <select id="pilih"></select>
+      </label>
+      <div id="miniStat" class="mini"></div>
+      <canvas id="chartDist" height="110"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>Tabel Statistik Deskriptif</h2>
+      <div class="scroll"><table id="tabel"></table></div>
+    </section>
+
+    <section class="grid">
+      <div class="card"><h2>Temuan</h2><ul id="temuan"></ul></div>
+      <div class="card"><h2>Keputusan yang Bisa Diambil</h2><ul id="keputusan"></ul></div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
